@@ -18,7 +18,9 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "HOTP_KEY", keyProperties['HOTP_KEY'])
+        buildConfigField("String", "TOTP_KEY", keyProperties['TOTP_KEY'])
+        buildConfigField("String", "USERNAME", keyProperties['USERNAME'])
+        buildConfigField("String", "PASSWORD", keyProperties['PASSWORD'])
     }
 
     buildTypes {
@@ -26,6 +28,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
