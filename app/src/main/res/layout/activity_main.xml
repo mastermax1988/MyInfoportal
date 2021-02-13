@@ -6,39 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Postkorb hier anzeigen"
+        android:text="Vorschau auf Mitteilungen und den Postkorb"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt"
-        app:layout_constraintVertical_bias="0.291" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.311" />
 
     <Button
         android:id="@+id/btnBrowser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Infoportal im Browser öffnen"
+        android:text="Infoportal im Browser öffnen und Token kopieren"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
         app:layout_constraintVertical_bias="0.192" />
+
+    <Button
+        android:id="@+id/btnToken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Token anzeigen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBrowser"
+        app:layout_constraintVertical_bias="0.174" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

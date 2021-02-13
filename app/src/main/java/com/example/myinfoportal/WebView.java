@@ -44,8 +44,8 @@ public class WebView extends AppCompatActivity {
                     return;
                 if(!url.contains("login"))
                 {
-                    System.out.println("user seems to be logged in -> grabbing postkorb and logging out");
-                    webView.evaluateJavascript("(function() { return ('<html><table>'+document.getElementById('postkorb-box').innerHTML+'</table></html>'); })();", new CB());
+                    webView.evaluateJavascript("(function() { return ('<html><table>'+document.querySelector('table').innerHTML+" +
+                            "'</table><br><table>'+document.getElementById('postkorb-box').innerHTML+'</table></html>'); })();", new CB());
                     String myCustomJS = "document.getElementsByClassName(\"logout_button\")[0].click()";
                     webView.loadUrl("javascript:(function(){" + myCustomJS + "})()");
                     iMaxTries = 0;
@@ -55,13 +55,11 @@ public class WebView extends AppCompatActivity {
                 if(iMaxTries <=0)
                     return;
                 iMaxTries--;
-                System.out.println(url);
                 super.onPageFinished(view, url);
                 String myCustomJS = "try{document.getElementById('user').value='"+BuildConfig.USERNAME+"'; " +
                         "document.getElementById('password').value='"+BuildConfig.PASSWORD+"'; }catch(e){} " +
                         "try{document.getElementById('otp').value='"+generator.now()+"';}catch(e){} " +
                         "document.getElementById('submit_button').click();";
-                System.out.println(myCustomJS);
                 webView.loadUrl("javascript:(function(){" + myCustomJS + "})()");
             }
         });
